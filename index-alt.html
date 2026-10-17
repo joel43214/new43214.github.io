@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Your Name – Portfolio</title>
+  <meta name="description" content="Portfolio of Your Name, designer and developer.">
+  <style>
+    :root {
+      --bg: #e8eef3;
+      --panel: #14213d;
+      --panel-text: #eef2f8;
+      --panel-muted: #9fb0cc;
+      --text: #14213d;
+      --muted: #4f5d75;
+      --accent: #e5386d;
+      --highlight: #ffd166;
+      --line: #c5d0dc;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0e1626;
+        --panel: #070c16;
+        --panel-text: #eef2f8;
+        --panel-muted: #8fa1bf;
+        --text: #e6ebf4;
+        --muted: #a0aec5;
+        --accent: #ff6b95;
+        --highlight: #ffd166;
+        --line: #26334b;
+      }
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.65;
+      color: var(--text);
+      background: var(--bg);
+    }
+    a { color: inherit; }
+    a:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+    h1, h2, h3 { font-family: Georgia, "Iowan Old Style", "Times New Roman", serif; font-weight: 700; line-height: 1.15; margin: 0; }
+    p { margin: 0 0 1rem; max-width: 62ch; }
+
+    .layout { display: grid; grid-template-columns: 1fr; min-height: 100vh; }
+
+    /* Sidebar */
+    aside {
+      background: var(--panel);
+      color: var(--panel-text);
+      padding: 2.5rem 1.75rem;
+    }
+    .side-inner { display: flex; flex-direction: column; gap: 2rem; }
+    aside h1 { font-size: 2.4rem; }
+    aside .role { color: var(--panel-muted); margin: .75rem 0 0; }
+    aside nav ul { list-style: none; margin: 0; padding: 0; display: grid; gap: .5rem; }
+    aside nav a { text-decoration: none; font-size: 1.1rem; padding: .15rem 0; display: inline-block; border-bottom: 2px solid transparent; }
+    aside nav a:hover { border-bottom-color: var(--highlight); }
+    .links { display: flex; gap: 1.25rem; font-size: .95rem; color: var(--panel-muted); }
+    .links a:hover { color: var(--highlight); }
+
+    @media (min-width: 900px) {
+      .layout { grid-template-columns: 340px 1fr; }
+      aside { position: sticky; top: 0; height: 100vh; padding: 3.5rem 2.5rem; }
+      .side-inner { height: 100%; justify-content: space-between; }
+    }
+
+    /* Main */
+    main { padding: 3rem 1.75rem 2rem; max-width: 820px; }
+    @media (min-width: 900px) { main { padding: 4.5rem 4rem 3rem; } }
+    section { margin-bottom: 5rem; }
+    h2 { font-size: 1.9rem; margin-bottom: 1.5rem; }
+
+    .intro { font-family: Georgia, "Iowan Old Style", serif; font-size: clamp(1.6rem, 3.6vw, 2.3rem); line-height: 1.3; max-width: 26ch; margin-bottom: 1.5rem; }
+    .intro mark { background: linear-gradient(transparent 60%, var(--highlight) 60%); color: inherit; }
+    .sub { color: var(--muted); font-size: 1.1rem; }
+
+    /* Work list */
+    .work-list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+    .work-list li { border-bottom: 1px solid var(--line); }
+    .work-list a {
+      display: grid; grid-template-columns: 1fr auto; gap: .25rem 1.5rem;
+      padding: 1.4rem .25rem; text-decoration: none;
+      transition: padding-left .2s ease, color .2s ease;
+    }
+    .work-list a:hover { padding-left: 1rem; color: var(--accent); }
+    .work-list h3 { font-size: 1.4rem; }
+    .work-list .year { color: var(--muted); align-self: center; }
+    .work-list .desc { grid-column: 1 / -1; color: var(--muted); }
+    .work-list a:hover .desc { color: var(--muted); }
+
+    /* About */
+    .skills { display: flex; flex-wrap: wrap; gap: .5rem .75rem; list-style: none; padding: 0; margin: 1.25rem 0 0; }
+    .skills li { padding: .25rem .9rem; border: 2px solid var(--text); border-radius: 999px; font-size: .95rem; }
+
+    /* Contact */
+    .mail {
+      display: inline-block;
+      font-family: Georgia, "Iowan Old Style", serif;
+      font-size: clamp(1.5rem, 4.5vw, 2.4rem);
+      text-decoration: none;
+      border-bottom: 4px solid var(--accent);
+      word-break: break-word;
+    }
+    .mail:hover { background: var(--highlight); color: #14213d; }
+
+    footer { color: var(--muted); font-size: .9rem; padding-top: 1.5rem; border-top: 1px solid var(--line); }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .work-list a { transition: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="layout">
+
+    <aside>
+      <div class="side-inner">
+        <div>
+          <h1>Your Name</h1>
+          <p class="role">Designer and developer</p>
+        </div>
+        <nav aria-label="Main">
+          <ul>
+            <li><a href="#work">Work</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="links">
+          <a href="https://github.com/">GitHub</a>
+          <a href="https://linkedin.com/">LinkedIn</a>
+        </div>
+      </div>
+    </aside>
+
+    <main>
+      <section id="top">
+        <p class="intro">I design and build websites that are <mark>simple to use</mark> and easy to love.</p>
+        <p class="sub">Replace this with one or two sentences about who you are and the kind of work you do.</p>
+      </section>
+
+      <section id="work">
+        <h2>Work</h2>
+        <ul class="work-list">
+          <li>
+            <a href="#">
+              <h3>Project One</h3><span class="year">2026</span>
+              <span class="desc">A short description of the project and your role in it.</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <h3>Project Two</h3><span class="year">2025</span>
+              <span class="desc">A short description of the project and your role in it.</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <h3>Project Three</h3><span class="year">2025</span>
+              <span class="desc">A short description of the project and your role in it.</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <h3>Project Four</h3><span class="year">2024</span>
+              <span class="desc">A short description of the project and your role in it.</span>
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <section id="about">
+        <h2>About</h2>
+        <p>Write a few sentences about your background, what you care about, and what you enjoy working on.</p>
+        <p>Add a line about what you’re doing now or what you’re looking for next.</p>
+        <ul class="skills">
+          <li>HTML &amp; CSS</li>
+          <li>JavaScript</li>
+          <li>UI design</li>
+          <li>Accessibility</li>
+        </ul>
+      </section>
+
+      <section id="contact">
+        <h2>Contact</h2>
+        <p>Have a project in mind? Send me an email.</p>
+        <a class="mail" href="mailto:you@example.com">you@example.com</a>
+      </section>
+
+      <footer>© 2026 Your Name</footer>
+    </main>
+
+  </div>
+</body>
+</html>
