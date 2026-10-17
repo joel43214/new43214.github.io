@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Your Name – Portfolio</title>
+  <meta name="description" content="Portfolio of Your Name, designer and developer.">
+  <style>
+    :root {
+      --bg: #f6f7f9;
+      --surface: #ffffff;
+      --text: #1b1f27;
+      --muted: #5c6472;
+      --accent: #2f5bea;
+      --line: #dde1e8;
+      --radius: 10px;
+      --max: 960px;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #12151b;
+        --surface: #1a1e26;
+        --text: #eceff4;
+        --muted: #9aa3b2;
+        --accent: #7b9bff;
+        --line: #2a303b;
+      }
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.65;
+      color: var(--text);
+      background: var(--bg);
+    }
+    img { max-width: 100%; display: block; }
+    a { color: var(--accent); }
+    a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+      outline: 3px solid var(--accent);
+      outline-offset: 2px;
+    }
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 1.25rem; }
+    section { padding: 4.5rem 0; }
+    h1, h2, h3 { line-height: 1.2; margin: 0 0 .75rem; }
+    h1 { font-size: clamp(2.2rem, 6vw, 3.6rem); }
+    h2 { font-size: 1.8rem; margin-bottom: 1.5rem; }
+    h3 { font-size: 1.15rem; }
+    p { margin: 0 0 1rem; max-width: 65ch; }
+
+    /* Header */
+    header {
+      position: sticky; top: 0; z-index: 10;
+      background: var(--bg);
+      border-bottom: 1px solid var(--line);
+    }
+    nav { display: flex; justify-content: space-between; align-items: center; padding: 1rem 0; }
+    .logo { font-weight: 700; text-decoration: none; color: var(--text); }
+    nav ul { list-style: none; display: flex; gap: 1.5rem; margin: 0; padding: 0; }
+    nav ul a { color: var(--muted); text-decoration: none; }
+    nav ul a:hover { color: var(--accent); }
+
+    /* Hero */
+    .hero { padding: 6rem 0 4rem; }
+    .hero p { font-size: 1.2rem; color: var(--muted); }
+    .btn {
+      display: inline-block; padding: .75rem 1.4rem; border-radius: var(--radius);
+      background: var(--accent); color: #fff; text-decoration: none; font-weight: 600;
+      border: 0; cursor: pointer; font-size: 1rem;
+    }
+    .btn:hover { filter: brightness(1.1); }
+    .btn.ghost { background: transparent; color: var(--accent); border: 1px solid var(--accent); margin-left: .5rem; }
+
+    /* Projects */
+    .grid { display: grid; gap: 1.5rem; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+    .card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
+    .thumb { aspect-ratio: 16 / 10; background: var(--line); }
+    .card-body { padding: 1.25rem; }
+    .card-body p { color: var(--muted); font-size: .95rem; margin-bottom: .75rem; }
+
+    /* About */
+    .about { display: grid; gap: 2rem; grid-template-columns: 1fr; align-items: start; }
+    .avatar { width: 160px; height: 160px; border-radius: 50%; background: var(--line); }
+    .skills { display: flex; flex-wrap: wrap; gap: .5rem; padding: 0; list-style: none; margin: 1rem 0 0; }
+    .skills li { padding: .3rem .8rem; border: 1px solid var(--line); border-radius: 999px; font-size: .9rem; background: var(--surface); }
+    @media (min-width: 700px) { .about { grid-template-columns: 180px 1fr; } }
+
+    /* Contact */
+    form { display: grid; gap: 1rem; max-width: 520px; }
+    label { display: grid; gap: .35rem; font-weight: 600; font-size: .95rem; }
+    input, textarea {
+      font: inherit; padding: .7rem .8rem; border-radius: var(--radius);
+      border: 1px solid var(--line); background: var(--surface); color: var(--text);
+    }
+    textarea { min-height: 140px; resize: vertical; }
+
+    footer { border-top: 1px solid var(--line); padding: 2rem 0; color: var(--muted); font-size: .9rem; }
+
+    @media (max-width: 560px) {
+      nav { flex-direction: column; gap: .5rem; }
+      nav ul { gap: 1rem; }
+      .btn.ghost { margin: .5rem 0 0; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav class="wrap" aria-label="Main">
+      <a class="logo" href="#top">Joel</a>
+      <ul>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap">
+        <h1>Hi, I’m Your Joel.<br>I build things for the web.</h1>
+        <p>I’m a designer and developer who turns ideas into clean, usable websites and apps.</p>
+        <a class="btn" href="#work">See my work</a>
+        <a class="btn ghost" href="#contact">Get in touch</a>
+      </div>
+    </section>
+
+    <section id="work">
+      <div class="wrap">
+        <h2>Selected work</h2>
+        <div class="grid">
+          <article class="card">
+            <div class="thumb"><!-- <img src="images/project-1.jpg" alt="Project 1 screenshot"> --></div>
+            <div class="card-body">
+              <h3>Project One</h3>
+              <p>A short description of what this project is and what you did.</p>
+              <a href="#">View project</a>
+            </div>
+          </article>
+          <article class="card">
+            <div class="thumb"></div>
+            <div class="card-body">
+              <h3>Project Two</h3>
+              <p>A short description of what this project is and what you did.</p>
+              <a href="#">View project</a>
+            </div>
+          </article>
+          <article class="card">
+            <div class="thumb"></div>
+            <div class="card-body">
+              <h3>Project Three</h3>
+              <p>A short description of what this project is and what you did.</p>
+              <a href="#">View project</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="wrap about">
+        <div class="avatar" role="img" aria-label="Photo of Your Name"></div>
+        <div>
+          <h2>About me</h2>
+          <p>Write a few sentences about your background, what you care about, and the kind of work you enjoy most.</p>
+          <p>Add a line about what you’re doing now or what you’re looking for next.</p>
+          <ul class="skills">
+            <li>HTML &amp; CSS</li>
+            <li>JavaScript</li>
+            <li>UI design</li>
+            <li>Accessibility</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap">
+        <h2>Contact</h2>
+        <p>Have a project in mind or just want to say hello? Send a message.</p>
+        <form action="#" method="post">
+          <label>Name <input type="text" name="name" required></label>
+          <label>Email <input type="email" name="email" required></label>
+          <label>Message <textarea name="message" required></textarea></label>
+          <button class="btn" type="submit">Send message</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      © 2026 Your Name. <a href="https://github.com/">GitHub</a> · <a href="https://linkedin.com/">LinkedIn</a>
+    </div>
+  </footer>
+
+</body>
+</html>
